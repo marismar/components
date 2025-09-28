@@ -10,7 +10,11 @@ const colors = [
   tokens.colors.brand.primary.green1,
 ] as const;
 
-export const LoaderDots = () => {
+type LoaderDotsProps = { colorContent?: 'light-content' | 'dark-content' };
+
+export const LoaderDots = ({
+  colorContent = 'light-content',
+}: LoaderDotsProps) => {
   const animations = useRef(
     [...Array(DOTS)].map(() => ({
       translateY: new Animated.Value(0),
@@ -75,6 +79,7 @@ export const LoaderDots = () => {
                 { scale: anim.scale },
               ],
             },
+            colorContent === 'light-content' && styles.whiteDot,
           ]}
         />
       ))}
@@ -95,4 +100,5 @@ const styles = StyleSheet.create({
     borderRadius: tokens.radii.md,
     backgroundColor: tokens.colors.brand.primary.blue2,
   },
+  whiteDot: { backgroundColor: tokens.colors.neutral.white },
 });
