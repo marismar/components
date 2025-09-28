@@ -22,6 +22,7 @@ import AppButton from './src/theme/AppButton';
 import AppButtonIcon from './src/theme/AppButtonIcon';
 import AppDivider from './src/theme/AppDivider';
 import { LoaderDots } from './src/theme/AppLoaderDots';
+import { AppProgressBar } from './src/theme/AppProgressBar';
 import AppText from './src/theme/AppText';
 import { FloatingInput } from './src/theme/AppTextInput';
 import AppTextLink from './src/theme/AppTextLink';
@@ -45,6 +46,12 @@ function AppContent() {
     <ScrollView style={styles.container}>
       <SafeAreaView>
         <AppText>Hello, World!</AppText>
+
+        <AppProgressBar progress={0.25} />
+        <AppProgressBar progress={0.5} />
+        <AppProgressBar progress={0.9} />
+
+        <AppProgressBar progress={1} />
 
         <View
           style={{
