@@ -21,6 +21,7 @@ import {
 import AppButton from './src/theme/AppButton';
 import AppButtonIcon from './src/theme/AppButtonIcon';
 import AppDivider from './src/theme/AppDivider';
+import { LoaderDots } from './src/theme/AppLoaderDots';
 import AppText from './src/theme/AppText';
 import { FloatingInput } from './src/theme/AppTextInput';
 import AppTextLink from './src/theme/AppTextLink';
@@ -44,6 +45,7 @@ function AppContent() {
     <ScrollView style={styles.container}>
       <SafeAreaView>
         <AppText>Hello, World!</AppText>
+
         <View
           style={{
             marginVertical: tokens.spacing.lg,
@@ -51,6 +53,7 @@ function AppContent() {
             gap: tokens.spacing.sm,
           }}
         >
+          <LoaderDots />
           <AppButton
             colorContent="dark-content"
             variant="primary"
