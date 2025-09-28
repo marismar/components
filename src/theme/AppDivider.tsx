@@ -1,9 +1,15 @@
 import React, { FC } from 'react';
 import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import { tokens } from './tokens';
 
 type AppDividerColor = 'gradient' | 'blue' | 'gray';
 type AppDividerSize = 'default' | 'thin';
+
+const colors = [
+  tokens.colors.brand.primary.blue2,
+  tokens.colors.brand.primary.green1,
+];
 
 type AppDividerProps = {
   color?: AppDividerColor;
@@ -16,6 +22,16 @@ const AppDivider: FC<AppDividerProps> = ({
   size = 'default',
   style,
 }) => {
+  if (color === 'gradient') {
+    return (
+      <LinearGradient
+        colors={colors}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={[styles.container, { height: tokens.borders.thick }, style]}
+      />
+    );
+  }
   return (
     <View
       style={[
